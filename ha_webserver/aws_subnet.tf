@@ -19,6 +19,8 @@ resource "aws_subnet" "template-private" {
 
   availability_zone = var.availability_zones[1]
 
+  map_public_ip_on_launch = false
+
   tags = {
     Name = "template-private"
     Owner = "terraform-templates-vpc"
