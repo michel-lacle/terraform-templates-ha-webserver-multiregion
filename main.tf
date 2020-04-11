@@ -5,3 +5,11 @@ module "ha_webserver_usa" {
     aws = aws.north-america
   }
 }
+
+module "ha_webserver_asia" {
+  source = "./ha_webserver"
+
+  providers = {
+    aws = aws.asia
+  }
+}
