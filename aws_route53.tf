@@ -1,5 +1,5 @@
 data "aws_route53_zone" "f1kart-zone" {
-  name         = "f1kart.com."
+  name = "f1kart.com."
 }
 
 resource "aws_route53_record" "www-dev" {
