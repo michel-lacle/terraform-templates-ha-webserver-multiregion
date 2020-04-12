@@ -2,9 +2,9 @@ data "aws_route53_zone" "f1kart-zone" {
   name = "f1kart.com."
 }
 
-resource "aws_route53_record" "www-dev" {
+resource "aws_route53_record" "w-north-america" {
   zone_id = data.aws_route53_zone.f1kart-zone.zone_id
-  name    = "ha-webserver"
+  name    = "weighted-ha"
   type    = "A"
   ttl     = "5"
 
@@ -16,9 +16,9 @@ resource "aws_route53_record" "www-dev" {
   records        = [module.ha_webserver_usa.ec2-ip]
 }
 
-resource "aws_route53_record" "www-live" {
+resource "aws_route53_record" "w-ha-asia" {
   zone_id = data.aws_route53_zone.f1kart-zone.zone_id
-  name    = "ha-webserver"
+  name    = "weighted-ha"
   type    = "A"
   ttl     = "5"
 
