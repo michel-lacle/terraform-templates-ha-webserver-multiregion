@@ -14,3 +14,20 @@ resource "aws_nat_gateway" "nat-gateway" {
     Project = "terraform-templates-vpc"
   }
 }
+
+# add a route for traffic to the internet through the NAT gateway
+# this way our private subnet can access the internet
+resource "aws_default_route_table" "default-route-table" {
+  default_route_table_id = aws_vpc.template-vpc.default_route_table_id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.nat-gateway.id
+  }
+
+  tags = {
+    Name = "main-route-table"
+    Owner = "terraform-templates-vpc"
+    Project = "terraform-templates-vpc"
+  }
+}
