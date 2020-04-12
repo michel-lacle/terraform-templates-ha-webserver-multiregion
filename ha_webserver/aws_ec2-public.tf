@@ -37,7 +37,7 @@ resource "aws_security_group" "ec2-sg-webserver" {
 }
 
 resource "aws_instance" "public-ec2-webserver" {
-  ami = "ami-0a887e401f7654935"
+  ami = var.ami_id
   instance_type = "t2.micro"
 
   # this is optional, but needed if you want to ssh into your ec2 instance
