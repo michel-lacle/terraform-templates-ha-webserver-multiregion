@@ -1,7 +1,3 @@
-data "aws_route53_zone" "f1kart-zone" {
-  name = "f1kart.com."
-}
-
 resource "aws_route53_record" "w-north-america" {
   zone_id = data.aws_route53_zone.f1kart-zone.zone_id
   name    = "weighted-ha"
