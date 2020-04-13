@@ -1,4 +1,4 @@
-resource "aws_route53_record" "w-north-america" {
+resource "aws_route53_record" "f-north-america" {
   zone_id = data.aws_route53_zone.f1kart-zone.zone_id
   name    = "failover-ha"
   type    = "A"
@@ -14,7 +14,7 @@ resource "aws_route53_record" "w-north-america" {
   records        = [module.ha_webserver_usa.ec2-ip]
 }
 
-resource "aws_route53_record" "w-ha-asia" {
+resource "aws_route53_record" "f-ha-asia" {
   zone_id = data.aws_route53_zone.f1kart-zone.zone_id
   name    = "failover-ha"
   type    = "A"
