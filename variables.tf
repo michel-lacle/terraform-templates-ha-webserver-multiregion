@@ -1,5 +1,5 @@
 variable "regions" {
-  type = "map"
+  type = map(string)
 
   default = {
     north-america = "us-east-1"

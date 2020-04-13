@@ -1,5 +1,5 @@
 resource "aws_route53_health_check" "north-america-health-check" {
-  fqdn              = module.ha_webserver_usa.ec2-ip
+  ip_address = module.ha_webserver_usa.ec2-ip
   port              = 80
   type              = "HTTP"
   resource_path     = "/"
