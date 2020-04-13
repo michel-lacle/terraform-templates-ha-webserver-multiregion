@@ -54,8 +54,8 @@ resource "aws_instance" "public-ec2-webserver" {
 
   tags = {
     Name = "public-ec2-webserver"
-    Owner = "terraform-templates-vpc"
-    Project = "terraform-templates-vpc"
+    Owner = "terraform-cloud"
+    Project = "terraform-templates-ha-webserver"
   }
 }
 
