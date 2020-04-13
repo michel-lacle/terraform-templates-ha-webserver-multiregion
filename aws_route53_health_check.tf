@@ -12,7 +12,7 @@ resource "aws_route53_health_check" "north-america-health-check" {
 }
 
 resource "aws_route53_health_check" "asia-health-check" {
-  ip_address = module.ha_webserver_asia
+  ip_address = module.ha_webserver_asia.ec2-ip
   port              = 80
   type              = "HTTP"
   resource_path     = "/"
